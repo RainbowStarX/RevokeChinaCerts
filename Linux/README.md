@@ -48,6 +48,20 @@ For example:
 Then, the file `/tmp/revoke.txt` is in the same format as `revoke-china-certs.ALL.conf` and
 can be used the same way.
 
+## Validation tool
+
+Run `./validator.sh` to test. On a machine with `EXTENDED` certs revoked, you should see:
+
+        ---------------------
+        Beginning tests.
+        There are 3 tests (BASE/EXTENDED/ALL), each of which would print a  'Passed test' if passes
+        ---------------------
+        Passed test sites for BASE incremental-set
+        Passed test sites for EXTENDED incremental-set
+        Failed test sites for ALL incremental-set
+        ---------------------
+        All tests executed.
+
 
 ## Notes
 
