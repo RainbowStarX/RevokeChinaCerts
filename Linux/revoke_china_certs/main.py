@@ -22,19 +22,19 @@ def _normalize_hash(hash_val):
 
 def usage():
     print ""
-    print "revoke_china_certs.py"
+    print "%s" % sys.argv[0]
     print ""
     print "-------------------------------------"
     print "Generate new ca-certificates.conf that revokes certs in %s according to %s." % (DEFAULT_CERT_CONF, DEFAULT_HASH_FILE)
-    print "\trevoke_china_certs.py revoke"
+    print "\t%s revoke" % sys.argv[0]
     print "Generate new ca-certificates.conf that revokes certs in [cert_conf] according to [revoke_list]."
-    print "\trevoke_china_certs.py revoke [cert_conf] [revoke_list]"
+    print "\t%s revoke [cert_conf] [revoke_list]"  % sys.argv[0]
     print "Generate new ca-certificates.conf that revokes certs in configurations from STDIN according to [revoke_list]."
-    print "\trevoke_china_certs.py revoke - [revoke_list]"
-    print "\teg: cat /etc/ca-certificates.conf | revoke_china_certs.py revoke - [revoke_list]"
+    print "\t%s revoke - [revoke_list]" % sys.argv[0]
+    print "\teg: cat /etc/ca-certificates.conf | %s revoke - [revoke_list]" % sys.argv[0]
     print "Generate revocation list"
-    print "\trevoke_china_certs.py generate [certs to revoke]"
-    print "\teg: revoke_china_certs.py generate ../../Windows/Certs/Online/*"
+    print "\t%s generate [certs to revoke]" % sys.argv[0]
+    print "\teg: %s generate ../../Windows/Certs/Online/*" % sys.argv[0]
     print ""
 
 def _hash_dict(files):
