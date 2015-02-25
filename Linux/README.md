@@ -28,9 +28,12 @@ To mitigate the problem, use `cron` to run the fix routinely.
 
 Then use cron to run the following command routinely (as root):
 
-        (revoke-china-certs revoke >/tmp/ca-certificates.conf; cp /tmp/ca-certificates.conf /etc/ca-certificates.conf)
+        # Run every 6 hours as root.
+        * */6    *    *    *		root	(revoke-china-certs revoke >/tmp/ca-certificates.conf; cp /tmp/ca-certificates.conf /etc/ca-certificates.conf)
 
-You can also add the above command to `.bashrc` or whatever script that is routinely invoked.
+You can also add
+`(revoke-china-certs revoke >/tmp/ca-certificates.conf; cp /tmp/ca-certificates.conf /etc/ca-certificates.conf)`
+ to `.bashrc` or whatever script that is routinely invoked.
 
 ## Generate custom blacklist
 
@@ -42,7 +45,7 @@ For example:
 
         revoke-china-certs generate ~/RevokeChinaCerts/Windows/Online/* | tee /tmp/revoke.txt
 
-Then, the file '/tmp/revoke.txt' is in the same format as 'revoke-china-certs.ALL.conf' and
+Then, the file `/tmp/revoke.txt` is in the same format as `revoke-china-certs.ALL.conf` and
 can be used the same way.
 
 
