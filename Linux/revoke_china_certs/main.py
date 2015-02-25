@@ -62,7 +62,7 @@ def _load_dict(path):
 def generate_revoke_hash():
     #print sys.argv
     assert sys.argv[1] == 'generate'
-    files = sys.argv[3:]
+    files = sys.argv[2:]
     for s in _hash_dict(files):
         print s
 
